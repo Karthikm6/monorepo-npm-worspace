@@ -1,0 +1,301 @@
+$loop-size : 25;
+$rem-size : 0.125;
+$width : 25, 50, 75, 100;
+
+:root {
+    --primary: #0d6efd;
+    --secondary: #6c757d;
+    --success: #198754;
+    --danger: #e1444d;
+    --warning: #ffc107;
+    --info: #0dcaf0;
+    --light: #f8f9fa;
+    --dark: #4a5562;
+    --lightDark: rgb(255 255 255 / 10%);
+    --link: #0d6efd;
+    --white: #fff;
+    --black: #000;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: var(--black);
+    background-color: var(--white);
+    line-height: 1.3em;
+    font-size: 16px;
+    font-weight: 400;
+}
+ul{
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+h1,h2,h3,h4,h5,h6,p{
+    margin: 0px;
+}
+
+.btn {
+    background-color: unset;
+    padding: 0;
+    border: 0px;
+    outline: unset;
+    border-radius: 0px;
+    color: unset;
+    line-height: unset;
+    cursor: pointer;
+}
+
+@mixin common-css($prefix: '') {
+
+    // colors
+    .#{$prefix}primary-color {
+      color: var(--primary)
+    }
+  
+    .#{$prefix}secondary-color {
+      color: var(--secondary)
+    }
+  
+    .#{$prefix}success-color {
+      color: var(--success)
+    }
+  
+    .#{$prefix}danger-color {
+      color: var(--danger)
+    }
+  
+    .#{$prefix}warning-color {
+      color: var(--warning)
+    }
+  
+    .#{$prefix}info-color {
+      color: var(--info)
+    }
+  
+    .#{$prefix}dark-color {
+      color: var(--dark)
+    }
+  
+    .#{$prefix}link-color {
+      color: var(--link)
+    }
+  
+    .#{$prefix}white-color {
+      color: var(--white)
+    }
+  
+    // BG color
+    .#{$prefix}primary-bg {
+      background-color: var(--primary)
+    }
+  
+    .#{$prefix}secondary-bg {
+      background-color: var(--secondary)
+    }
+  
+    .#{$prefix}success-bg {
+      background-color: var(--success)
+    }
+  
+    .#{$prefix}danger-bg {
+      background-color: var(--danger)
+    }
+  
+    .#{$prefix}warning-bg {
+      background-color: var(--warning)
+    }
+  
+    .#{$prefix}info-bg {
+      background-color: var(--info)
+    }
+  
+    .#{$prefix}dark-bg {
+      background-color: var(--dark)
+    }
+    .#{$prefix}light-dark-bg {
+        background-color: var(--lightDark)
+      }
+  
+    .#{$prefix}link-bg {
+      background-color: var(--link)
+    }
+  
+    .#{$prefix}white-bg {
+      background-color: var(--white)
+    }
+
+    .#{$prefix}m-auto {
+        margin: auto;
+      }
+      .#{$prefix}border-box {
+        box-sizing: border-box;
+      }
+
+    // text align
+    .#{$prefix}ts {
+      text-align: start;
+    }
+    .#{$prefix}tc {
+      text-align: center;
+    }
+    .#{$prefix}te {
+      text-align: end;
+    }
+    // font-bold
+    .#{$prefix}fw-700 {
+        font-weight: 700;
+      }
+  
+    // width
+    @each $i in $width {
+      .#{$prefix}w-#{$i} {
+        width: $i+#{'%'};
+      }
+    }
+  
+    // loop start
+    @for $i from 0 through $loop-size {
+      // padding
+      .#{$prefix}pt-#{$i} {
+        padding-top: ($i * $rem-size) + rem;
+      }
+  
+      .#{$prefix}pb-#{$i} {
+        padding-bottom: ($i * $rem-size) + rem;
+      }
+  
+      .#{$prefix}pl-#{$i} {
+        padding-left: ($i * $rem-size) + rem;
+      }
+  
+      .#{$prefix}pr-#{$i} {
+        padding-right: ($i * $rem-size) + rem;
+      }
+  
+      .#{$prefix}p-#{$i} {
+        padding-right: ($i * $rem-size) + rem;
+      }
+
+      .#{$prefix}py-#{$i} {
+        padding-bottom: ($i * $rem-size) + rem;
+        padding-top: ($i * $rem-size) + rem;
+      }
+
+      .#{$prefix}px-#{$i} {
+        padding-left: ($i * $rem-size) + rem;
+        padding-right: ($i * $rem-size) + rem;
+      }
+  
+      // margin 
+      .#{$prefix}mt-#{$i} {
+        margin-top: ($i * $rem-size) + rem;
+      }
+  
+      .#{$prefix}mb-#{$i} {
+        margin-bottom: ($i * $rem-size) + rem;
+      }
+  
+      .#{$prefix}ml-#{$i} {
+        margin-left: ($i * $rem-size) + rem;
+      }
+  
+      .#{$prefix}mr-#{$i} {
+        margin-right: ($i * $rem-size) + rem;
+      }
+  
+      .#{$prefix}m-#{$i} {
+        margin: ($i * $rem-size) + rem;
+      }
+
+      // flex gap
+      .#{$prefix}gap-#{$i} {
+        gap: ($i * $rem-size) + rem;
+      }
+      .#{$prefix}gapx-#{$i} {
+        column-gap: ($i * $rem-size) + rem;
+      }
+      .#{$prefix}gapy-#{$i} {
+        row-gap: ($i * $rem-size) + rem;
+      }
+      // line height
+      .#{$prefix}line-#{$i} {
+        line-height: ($i * $rem-size) + rem;
+      }
+
+      // border-radius
+      .#{$prefix}r-#{$i} {
+        border-radius: ($i * $rem-size) + rem;
+      }
+      // font-size
+      .#{$prefix}fs-#{$i} {
+        font-size: ($i * $rem-size) + rem;
+      }
+    }
+    // loop end
+  
+    // border
+    .#{$prefix}border-danger {
+      border: 1px solid var(--danger)
+    }
+  
+    .#{$prefix}border-info {
+      border: 1px solid var(--info)
+    }
+
+    .#{$prefix}border-light-dark {
+      border: 1px solid var(--dark)
+    }
+
+    // flex
+    .#{$prefix}flex{
+        display: flex
+    }
+    .#{$prefix}col{
+        flex-direction: column
+    }
+    .#{$prefix}row{
+        flex-direction: row
+    }
+    .#{$prefix}start{
+        justify-content: flex-start;
+    }
+    .#{$prefix}center{
+        justify-content: center;
+    }
+    .#{$prefix}end{
+        justify-content: flex-end;
+    }
+    .#{$prefix}between{
+        justify-content: space-between;
+    }
+    .#{$prefix}top{
+        align-items: flex-start;
+    }
+    .#{$prefix}middle{
+        align-items: center;
+    }
+    .#{$prefix}bottom{
+        align-items: flex-end;
+    }
+  }
+  
+  @include common-css();
+  
+  @media (min-width: 768px) {
+    @include common-css('md-');
+  }
+  
+  @media (min-width: 1025px) {
+    @include common-css('xl-');
+  }
+  
+  @media (min-width: 1280px) {
+    @include common-css('xxl-');
+  }
